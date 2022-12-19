@@ -1,13 +1,13 @@
 /*
-  Confira os detalhes e a utilização desse código no README
+  Check out the details and usage of this project on README.md
 
-  Leitura dos sensores de toque, de luz/cor e de infravermelho da coleção LEGO MINDSTORM EV3
+  Reading touch, light/color and infrared sensors from the LEGO MINDSTORM EV3 collection
 
-  Compilador: Arduino IDE 2.0.3
-  Placa: Arduino Mega
+  Compiler: Arduino IDE 2.0.3
+  Board: Arduino Mega
   
-  Autor: João Senírio de Sousa Costa
-  Data: Dezembro de 2022
+  Author: João Senírio de Sousa Costa
+  Date: December of 2022
 */
 
 #define Max_baudrate 57600
