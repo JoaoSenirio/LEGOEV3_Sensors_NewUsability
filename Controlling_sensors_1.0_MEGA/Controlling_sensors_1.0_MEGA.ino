@@ -21,6 +21,7 @@
 bool flag_pinMode = false,
      flag_Serialbegin = false,
      isConnected = false,
+     isBtnSensor = false,
      isColorSensor = false,
      isIRSensor = false;
 
@@ -55,7 +56,10 @@ void loop(){
   //No sensor connected
   if(analogRead(ID_sensor) > 950){ 
     //Reset all flags and variables
-    if(flag_pinMode) flag_pinMode = false; 
+    if(flag_pinMode){
+      flag_pinMode = false; 
+      isBtnSensor = false;
+    }
     else if(isConnected){
       isConnected = false;
       flag_Serialbegin = false; 
@@ -69,6 +73,7 @@ void loop(){
   while(analogRead(ID_sensor) >= 70 && analogRead(ID_sensor) <= 90){ //Internal resistor between GND and Pin 1 provide low voltage on analog port
     if(!flag_pinMode){ //Handle setup input pin only once
       flag_pinMode = true;
+      isBtnSensor = true;
       pinMode(SimpleSensor_read, INPUT);
     }
     Serial.println(digitalRead(SimpleSensor_read));
@@ -105,7 +110,7 @@ void Setup_UARTSensor(){
       Serial1.write(ACK); //Send ACK
       Serial1.flush(); //Wait until all bytes written go out
       Serial1.end(); 
-      Serial1.begin(57600); //Restart Serial communication on Max baurate acept by the sensor
+      Serial1.begin(Max_baudrate); //Restart Serial communication on Max baurate acept by the sensor
       TIMSK1 |= (1<<TOIE1); //Enable Timer1 Overflow Interrupt 
       isConnected = true;
       delay(50);
