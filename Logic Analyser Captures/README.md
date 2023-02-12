@@ -1,4 +1,4 @@
-## Pacotes de dados e comunicação UART
+# Pacotes de dados e comunicação UART
 
 Nesta seção, será explorado mais sobre os pacotes de dados trafegados entre os sensores digitais e o *brick*, além das característica e da dinâmica da comunicação UART entre eles. 
 
