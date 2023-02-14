@@ -4,7 +4,7 @@ O algoritmo que inicialmente foi construído pensando na plataforma do ATMEGA 25
 
 > O que o código faz ?
 
-Realiza a leitura dos sensores de toque, cor e infravermelho, sendo possível trocar o sensor conectado em tempo de execução do programa. Além disso, **exclusivamente para o sensor de cor**, é possível mudar o modo de operação entre refletância (0), intensidade da luz ambiente (1) e cor (2). Para tal, basta enviar o número do modo desejado pelo Monitor Serial. Ademais, as leituras do sensor infravermelho são realizadas apenas no modo de proximidade/distância. Por fim, uma verificação do checkbyte é realizada nos pacotes de dados *Data Message* a fim de validar as leituras enviadas.
+Realiza a leitura dos sensores de toque, cor e infravermelho, sendo possível trocar o sensor conectado em tempo de execução do programa. Além disso, **exclusivamente para o sensor de cor**, é possível mudar o modo de operação entre refletância (0), intensidade da luz ambiente (1) e cor (2). Para tal, basta enviar o número do modo desejado pelo Monitor Serial. Ademais, as leituras do **sensor infravermelho** são realizadas apenas no modo de proximidade/distância. Por fim, uma verificação do *checkbyte* é realizada nos pacotes de dados *Data Message* a fim de validar as leituras enviadas.
 
 > O que o código não faz ? 
 
@@ -12,7 +12,7 @@ O sensor de infravermelho suporta outros modos — os quais funcionam em conjunt
 
 ## Detalhes importantes 
 
-A porta de Hardware Serial nativa do ATMEGA328p não foi utilizada para a comunicação com os sensores, sendo que foi preservada para exportar, de maneira facilitada, as leituras deles. Assim, foi preciso implementar uma comunicação UART com portas virtuais, isto é, por meio de software. Optou-se pela lib **AltSoftSerial** — acesse a [referência oficial](https://www.pjrc.com/teensy/td_libs_AltSoftSerial.html) — ao invés da lib que é distribuída em conjunto com a Arduino IDE: SoftwareSerial. Tal preferência deu-se em função da menor latência da lib AltSoftSerial em comparação com a SoftwareSerial, de forma que a primeira possui latência de 2-3&mu;s e a segunda de 174&mu;s. 
+A porta de Hardware Serial nativa do ATMEGA328p não foi utilizada para a comunicação com os sensores, sendo que foi preservada para exportar, de maneira facilitada, as leituras deles. Assim, foi preciso implementar uma comunicação UART com portas virtuais, isto é, por meio de software. Optou-se pela lib **AltSoftSerial** — acesse a [referência oficial](https://www.pjrc.com/teensy/td_libs_AltSoftSerial.html) —ao invés da lib que é distribuída em conjunto com a Arduino IDE: SoftwareSerial. Tal preferência deu-se em função da menor latência da lib AltSoftSerial em comparação com a SoftwareSerial, de forma que a primeira possui latência de 2-3&mu;s e a segunda de 174&mu;s. 
 
 Todavia, o estado das portas, utilizadas pela UART virtual, antes da execução do método **begin()** não é completamente restaurado pelo método **end()** em ambas as libs. Isso interfere diretamente na leitura do pino 1 da placa adaptadora, o qual realiza a identificação do tipo do sensor. O sensor de toque é o único afetado, pois seu resistor interno — que garante sua identificação — é ligado ao TX da UART virtual, o qual não é devidamente tratado pelo método end(). Sendo assim, uma variação de 5 a 10% é percebida na leitura analógica que detecta a conexão do sensor de toque. Tal questão já foi solucionada no código, como exemplificado abaixo. 
 ```
