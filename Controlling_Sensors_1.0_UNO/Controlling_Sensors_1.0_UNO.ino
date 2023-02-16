@@ -46,8 +46,7 @@ void loop(){
   int value_read; 
 
   //No sensor connected
-  if(analogRead(ID_sensor) > 950){ 
-    //Reset all flags and variables
+  if(analogRead(ID_sensor) > 950){ //Reset all flags and variables
     if(flag_pinMode){
       flag_pinMode = false; 
       isBtnSensor = false;
