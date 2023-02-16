@@ -4,9 +4,11 @@ Nesta seção, será explorado mais sobre os pacotes de dados trafegados entre o
 
 As figuras abaixo são referentes aos arquivos **.sal**, sendo extraídas do programa Logic 2 da Saleae, e ilustram os pacotes de dados enviados pelos sensores digitais no momento que transmitem toda configuração inicial ao *brick*. Já os arquivos **.xlsx** correspondem a esses pacotes interpretados, com a informação de cada *byte* devidamente explicada, de maneira a facilitar a compreensão. 
 
+![](/Images/DataPackage_Colorsensor.png)
+
 <div class="container">
     <div class="imagem">
-        <img src="/Images/DataPackage_Colorsensor.png">    
+        <img src="">    
     </div>
     <div class="imagem">
         <img src="/Images/DataPackage_IRsensor.png">
