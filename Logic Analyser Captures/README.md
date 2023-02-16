@@ -10,19 +10,8 @@ As figuras abaixo são referentes aos arquivos **.sal**, sendo extraídas do pro
     </div>
     <div class="imagem">
         <img src="/Images/DataPackage_IRsensor.png">
-    </div>  
+    </div> 
 </div>
-
-<style>
-.container{
-    width: 100%;
-    text-align: center;
-}
-.imagem{
-    width: 100%;
-    display:inline-block;
-}
-</style>
 
 Os referidos pacotes de dados carregam 4 principais tipos de menssagem, sendo eles *System Message*, *Command Message*, *Data Message* e *Info Message*. Todos eles possuem ao menos um *byte*, como é o caso do *System Message*, intitulado **Message byte**. No caso do *Command Message* e *Data Message* ainda há uma quantidade de *bytes* variável, intitulada **Payload**, a qual carrega a informação propriamente dita. Por último, a categoria *Info Message* possui um *byte* adicional, chamado de **Info byte**, situado entre o **Message byte** e o **Payload**. Todos os 4 tipos de menssagem encerram com um *checkbyte*, o qual é calculado pela operação XOR (OU EXCLUSIVO) entre todos os *bytes* que compõem a menssagem e um byte específico: 0xFF.
 
