@@ -2,7 +2,7 @@
 
 Nesta seção, será explorado mais sobre os pacotes de dados trafegados entre os sensores digitais e o *brick*, além das característica e da dinâmica da comunicação UART entre eles. 
 
-As figuras abaixo são referentes aos arquivos **.sal**, sendo extraídas do programa Logic 2 da Saleae, e ilustram os pacotes de dados enviados pelos sensores digitais no momento que transmitem toda configuração inicial ao *brick*. Já os arquivos **.xlsx** correspondem a esses pacotes interpretados, com a informação de cada *byte* devidamente explicada, de maneira a facilitar a compreensão. 
+As figuras abaixo são referentes aos arquivos **.sal**, sendo extraídas do programa Logic 2 da Saleae, e ilustram os pacotes de dados enviados pelos sensores digitais no momento que transmitem toda configuração inicial ao *brick*, de maneira que a primeira imagem é referente ao sensor de cor e a segunda ao sensor de infravermelho. Já os arquivos **.xlsx** correspondem a esses pacotes interpretados, com a informação de cada *byte* devidamente explicada, de maneira a facilitar a compreensão. 
 
 ![](/Images/DataPackage_Colorsensor.png)
 ![](/Images/DataPackage_IRsensor.png)
