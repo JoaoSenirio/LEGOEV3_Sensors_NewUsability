@@ -1,4 +1,5 @@
 # Sensores Lego EV3: nova possibilidade de uso 
+![GitHub](https://img.shields.io/github/license/JoaoSenirio/LEGOEV3_Sensors_NewUsability)
 
 ## Resumo 
 
