@@ -22,5 +22,14 @@ A partir de toda informação até aqui coletada, iniciou-se a programação de 
 [![IMAGE ALT TEXT](/Images/MEGA_Thumbnail.png)](http://www.youtube.com/watch?v=v17XQr9M2BI "Arduino MEGA controlling LEGO EV3 sensors")
 
 [![IMAGE ALT TEXT](/Images/UNO_Thumnail.png)](http://www.youtube.com/watch?v=nMiRV2qx3uY "Arduino UNO controlling LEGO EV3 sensors")
-## Próximos passos 
+
+## Próximos passos
+
+Ainda há muito que pode ser feito, de maneira a aprimorar as funcionalidades e as capacidades do presente projeto. Abaixo, encontra-se uma lista de possíveis/futuros incrementos. Sinta-se livre para contribuir. 
+
+* Expandir para demais sensores da coleção LEGO EV3 MINDSTORM. 
+* Construir uma versão em PCB da placa adaptadora, com a possibilidade de incluir um microcontrolador que gerencie o sensor conectado, apenas exportando os dados lidos. 
+* Adicionar controle simultâneo de mais de um sensor. 
+* Com o microcontrolador dedicado na PCB, construir uma lib para facilitar a integração de controladores externos com placa adaptadora. 
+
 ## Conclusão
