@@ -3,6 +3,8 @@
 
 ## Resumo 
 
+O presente projeto busca mostrar a possibilidade de uso e de integração dos sensores da coleção LEGO EV3 MINDSTORM com outras plataformas de prototipação/robótica educacional, isto é, intenta o funcionamento do sensores em questão sem o intermédio do controlador principal da coleção, o *brick*. Tal processo demandou a execução de muitas etapas, as quais iniciaram com a análise da documentação oficial da LEGO, passando pela construção da placa adaptadora e por estudos dos *bytes* enviados pelos sensores e encerrou com a programação de um algoritmo — testado nas placas Arduino MEGA/UNO — o qual implementa a comunicação com os sensores, sendo capaz de mantê-la estável e de exportar as leituras feitas por eles. Ao final de todo o processo, provou-se exequível a integração dos sensores da coleção LEGO EV3 MINDSTORM com outras plataformas.
+
 ## Motivação
 
 No cenário da tecnologia educacional, as plataformas da LEGO e do Arduino ocupam posições de destaque, sendo que o último também marca presença no mundo maker. Não se pode negar a qualidade dos kits da LEGO, contudo o alto preço para aquisição desses é um fator limitante, enquanto o Arduino é mais acessível. Apesar das vantagens e das desvantagens de cada um, em competições de robótica as duas plataformas tem se destacado. Foi, em uma dessas competições, que minha curiosidade sobre a integração das duas plataformas surgiu. Contextualizando, minha equipe encontrou muita dificuldade para fazer aferições dos símbolos que se encontravam no terreno a ser percorrido pelo robô, sendo que utilizávamos a plataforma da Arduino e sensores compatíveis, enquanto demais equipes optaram pela LEGO e não pareciam encontrar dificuldade para tal tarefa. Mais tarde, passado o evento, percebemos que nossos sensores não eram da melhor qualidade, além da inconsistência nas leituras deles. Não havia me esquecido do sensores da LEGO utilizados por alguns adversários, da qualidade e da facilidade de leitura deles, fatos que notamos a partir de interações com as demais equipes, de maneira que comecei a me questionar sobre a possibilidade de utilizá-los com o Arduino, plataforma com a qual já estava habituado. Após muitas pesquisas, frustrado com a ausência de projetos os quais executassem minha ideia, tomei esse desafio como particular: integrar os sensores da LEGO com outras plataformas microcontroladas, de forma a expandir as possibilidades de uso e tornar isso público para o proveito de todos.
@@ -31,5 +33,3 @@ Ainda há muito que pode ser feito, de maneira a aprimorar as funcionalidades e 
 * Construir uma versão em PCB da placa adaptadora, com a possibilidade de incluir um microcontrolador que gerencie o sensor conectado, apenas exportando os dados lidos. 
 * Adicionar controle simultâneo de mais de um sensor. 
 * Com o microcontrolador dedicado na PCB, construir uma lib para facilitar a integração de controladores externos com placa adaptadora. 
-
-## Conclusão
